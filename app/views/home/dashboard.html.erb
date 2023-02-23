@@ -1,6 +1,8 @@
 <h1>Create Tasks</h1>
 <%= render 'tasks/form' %>
 <hr>
+Create repeated task
+<%= button_to 'Create repeat tasks', created_repeated_tasks_path, method: :post %>
 <hr>
 <h2>Task list</h2>
 <ul>
