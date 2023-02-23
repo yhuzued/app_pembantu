@@ -1,0 +1,27 @@
+<%= form_with(model: @repeated_task) do |form| %>
+  <% if @repeated_task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@repeated_task.errors.count, "error") %> prohibited this repeated_task from being saved:</h2>
+
+      <ul>
+        <% repeated_task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :completed, style: "display: block" %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

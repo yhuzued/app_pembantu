@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @repeated_task %>
+
+<div>
+  <%= link_to "Edit this repeated task", edit_repeated_task_path(@repeated_task) %> |
+  <%= link_to "Back to repeated tasks", repeated_tasks_path %>
+
+  <%= button_to "Destroy this repeated task", @repeated_task, method: :delete %>
+</div>

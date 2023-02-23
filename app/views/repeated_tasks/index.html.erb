@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Repeated tasks</h1>
+
+<div id="repeated_tasks">
+  <% @repeated_tasks.each do |repeated_task| %>
+    <%= render repeated_task %>
+    <p>
+      <%= link_to "Show this repeated task", repeated_task %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New repeated task", new_repeated_task_path %>

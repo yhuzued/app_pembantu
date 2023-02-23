@@ -1,0 +1,2 @@
+class RepeatedTask < ApplicationRecord
+end
