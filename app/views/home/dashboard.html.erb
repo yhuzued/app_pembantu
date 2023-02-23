@@ -1,2 +1,19 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<h1>Create Tasks</h1>
+<%= render 'tasks/form' %>
+
+<h2>Task list</h2>
+<ul>
+    <% @uncompleted_tasks.each do |t| %>
+        <li><%= t.title %> || status: <%= t.completed %> || 
+            <%= render 'home/task/completed_button', t: t %>
+            <%= render 'home/task/delete_button', t: t %>
+        </li>
+    <% end %>
+</ul>
+
+<h2>Completed task</h2>
+<ul>
+    <% @completed_tasks.each do |t| %>
+    <li><%= t.title %> || status: <%= t.completed %> </li>
+    <% end %>
+</ul>
