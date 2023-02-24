@@ -34,7 +34,7 @@ static targets = ['timer']
       if(seconds >= 59 && minutes >= 25){
         this.reset()
       }
-    }, 100)
+    }, 1000)
   }
   
   stop(seconds, minutes, timer){
