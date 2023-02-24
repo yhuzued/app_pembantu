@@ -1,4 +1,9 @@
 <h1>Create Tasks</h1>
+<div data-controller="timer">
+  <h5 data-timer-target="timer">00.00</h5>
+  <button data-action="click->timer#start">Start timer</button>
+</div>
+<hr>
 <%= render 'tasks/form' %>
 <hr>
 Create repeated task
@@ -6,25 +11,25 @@ Create repeated task
 <hr>
 <h2>Task list</h2>
 <ul>
-    <% @uncompleted_tasks.each do |t| %>
-        <li><%= t.title %> || status: <%= t.completed %> || 
-            <%= render 'home/task/completed_button', t: t %>
-            <%= render 'home/task/delete_button', t: t %>
-            <%= render 'home/task/repeated_button', title: t.title %>
-        </li>
-    <% end %>
+  <% @uncompleted_tasks.each do |t| %>
+    <li><%= t.title %> || status: <%= t.completed %> || 
+      <%= render 'home/task/completed_button', t: t %>
+      <%= render 'home/task/delete_button', t: t %>
+      <%= render 'home/task/repeated_button', title: t.title %>
+      </li>
+  <% end %>
 </ul>
 
 <h2>Completed task</h2>
 <ul>
-    <% @completed_tasks.each do |t| %>
-    <li><%= t.title %> || status: <%= t.completed %> </li>
-    <% end %>
+  <% @completed_tasks.each do |t| %>
+  <li><%= t.title %> || status: <%= t.completed %> </li>
+  <% end %>
 </ul>
 
 <h2>Repeated task</h2>
 <ul>
-    <% @repeated_tasks.each do |t| %>
-    <li><%= t.title %> || status: <%= t.completed %> </li>
-    <% end %>
+  <% @repeated_tasks.each do |t| %>
+  <li><%= t.title %> || status: <%= t.completed %> </li>
+  <% end %>
 </ul>
